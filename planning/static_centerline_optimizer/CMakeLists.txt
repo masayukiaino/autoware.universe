@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(static_centerline_optimizer)
+project(autoware_static_centerline_optimizer)
 
 find_package(autoware_cmake REQUIRED)
 
@@ -9,7 +9,7 @@ find_package(rosidl_default_generators REQUIRED)
 find_package(std_msgs REQUIRED)
 
 rosidl_generate_interfaces(
-  static_centerline_optimizer
+  autoware_static_centerline_optimizer
   "srv/LoadMap.srv"
   "srv/PlanRoute.srv"
   "srv/PlanPath.srv"
