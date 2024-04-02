@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "static_centerline_optimizer/utils.hpp"
+#include "autoware_static_centerline_optimizer/utils.hpp"
 
 #include "behavior_path_planner_common/data_manager.hpp"
 #include "behavior_path_planner_common/utils/drivable_area_expansion/static_drivable_area.hpp"
@@ -21,6 +21,9 @@
 
 #include <lanelet2_core/LaneletMap.h>
 #include <lanelet2_core/geometry/Lanelet.h>
+
+namespace autoware
+{
 namespace static_centerline_optimizer
 {
 namespace
@@ -213,3 +216,4 @@ MarkerArray create_distance_text_marker(
 }
 }  // namespace utils
 }  // namespace static_centerline_optimizer
+}  // namespace autoware

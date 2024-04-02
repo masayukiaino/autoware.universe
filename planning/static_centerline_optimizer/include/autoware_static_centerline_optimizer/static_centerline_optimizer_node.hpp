@@ -16,10 +16,10 @@
 #define STATIC_CENTERLINE_OPTIMIZER__STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
 
 #include "rclcpp/rclcpp.hpp"
-#include "static_centerline_optimizer/srv/load_map.hpp"
-#include "static_centerline_optimizer/srv/plan_path.hpp"
-#include "static_centerline_optimizer/srv/plan_route.hpp"
-#include "static_centerline_optimizer/type_alias.hpp"
+#include "autoware_static_centerline_optimizer/srv/load_map.hpp"
+#include "autoware_static_centerline_optimizer/srv/plan_path.hpp"
+#include "autoware_static_centerline_optimizer/srv/plan_route.hpp"
+#include "autoware_static_centerline_optimizer/type_alias.hpp"
 #include "vehicle_info_util/vehicle_info_util.hpp"
 
 #include <geography_utils/lanelet2_projector.hpp>

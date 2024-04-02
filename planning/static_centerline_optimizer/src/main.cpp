@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "static_centerline_optimizer/static_centerline_optimizer_node.hpp"
+#include "autoware_static_centerline_optimizer/static_centerline_optimizer_node.hpp"
 
 int main(int argc, char * argv[])
 {
