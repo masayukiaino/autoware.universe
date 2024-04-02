@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef STATIC_CENTERLINE_OPTIMIZER__UTILS_HPP_
-#define STATIC_CENTERLINE_OPTIMIZER__UTILS_HPP_
+#ifndef AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__UTILS_HPP_
+#define AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__UTILS_HPP_
 
-#include "route_handler/route_handler.hpp"
 #include "autoware_static_centerline_optimizer/type_alias.hpp"
+#include "route_handler/route_handler.hpp"
 
 #include <rclcpp/time.hpp>
 
@@ -53,4 +53,4 @@ MarkerArray create_distance_text_marker(
 }  // namespace static_centerline_optimizer
 }  // namespace autoware
 
-#endif  // STATIC_CENTERLINE_OPTIMIZER__UTILS_HPP_
+#endif  // AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__UTILS_HPP_

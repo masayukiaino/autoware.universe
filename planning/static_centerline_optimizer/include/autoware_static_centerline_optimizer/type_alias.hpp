@@ -11,8 +11,8 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-#ifndef STATIC_CENTERLINE_OPTIMIZER__TYPE_ALIAS_HPP_
-#define STATIC_CENTERLINE_OPTIMIZER__TYPE_ALIAS_HPP_
+#ifndef AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__TYPE_ALIAS_HPP_
+#define AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__TYPE_ALIAS_HPP_
 
 #include "route_handler/route_handler.hpp"
 #include "tier4_autoware_utils/geometry/geometry.hpp"
@@ -46,4 +46,4 @@ using visualization_msgs::msg::MarkerArray;
 }  // namespace static_centerline_optimizer
 }  // namespace autoware
 
-#endif  // STATIC_CENTERLINE_OPTIMIZER__TYPE_ALIAS_HPP_
+#endif  // AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__TYPE_ALIAS_HPP_

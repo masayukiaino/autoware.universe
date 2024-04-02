@@ -14,6 +14,9 @@
 
 #include "autoware_static_centerline_optimizer/static_centerline_optimizer_node.hpp"
 
+#include "autoware_static_centerline_optimizer/msg/points_with_lane_id.hpp"
+#include "autoware_static_centerline_optimizer/type_alias.hpp"
+#include "autoware_static_centerline_optimizer/utils.hpp"
 #include "lanelet2_extension/utility/message_conversion.hpp"
 #include "lanelet2_extension/utility/query.hpp"
 #include "lanelet2_extension/utility/utilities.hpp"
@@ -23,9 +26,6 @@
 #include "motion_utils/trajectory/conversion.hpp"
 #include "obstacle_avoidance_planner/node.hpp"
 #include "path_smoother/elastic_band_smoother.hpp"
-#include "autoware_static_centerline_optimizer/msg/points_with_lane_id.hpp"
-#include "autoware_static_centerline_optimizer/type_alias.hpp"
-#include "autoware_static_centerline_optimizer/utils.hpp"
 #include "tier4_autoware_utils/geometry/geometry.hpp"
 #include "tier4_autoware_utils/ros/parameter.hpp"
 
