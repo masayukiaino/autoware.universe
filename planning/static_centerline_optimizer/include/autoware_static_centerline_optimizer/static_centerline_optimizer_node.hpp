@@ -35,9 +35,9 @@ namespace autoware
 {
 namespace static_centerline_optimizer
 {
-using autoware::static_centerline_optimizer::srv::LoadMap;
-using autoware::static_centerline_optimizer::srv::PlanPath;
-using autoware::static_centerline_optimizer::srv::PlanRoute;
+using autoware_static_centerline_optimizer::srv::LoadMap;
+using autoware_static_centerline_optimizer::srv::PlanPath;
+using autoware_static_centerline_optimizer::srv::PlanRoute;
 
 class StaticCenterlineOptimizerNode : public rclcpp::Node
 {
