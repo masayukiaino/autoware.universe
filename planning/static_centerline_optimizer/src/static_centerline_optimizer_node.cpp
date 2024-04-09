@@ -53,6 +53,8 @@
 #include <string>
 #include <vector>
 
+namespace autoware
+{
 namespace static_centerline_optimizer
 {
 namespace
@@ -759,3 +761,4 @@ void StaticCenterlineOptimizerNode::save_map(
   RCLCPP_INFO(get_logger(), "Saved map.");
 }
 }  // namespace static_centerline_optimizer
+}  // namespace autoware
