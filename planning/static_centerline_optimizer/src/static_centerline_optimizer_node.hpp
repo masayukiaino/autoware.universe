@@ -12,15 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
-#define AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
-
-#include "type_alias.hpp"
+#ifndef STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
+#define STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
 
 #include "autoware_static_centerline_optimizer/srv/load_map.hpp"
 #include "autoware_static_centerline_optimizer/srv/plan_path.hpp"
 #include "autoware_static_centerline_optimizer/srv/plan_route.hpp"
 #include "rclcpp/rclcpp.hpp"
+#include "type_alias.hpp"
 #include "vehicle_info_util/vehicle_info_util.hpp"
 
 #include <geography_utils/lanelet2_projector.hpp>
@@ -108,4 +107,4 @@ private:
   vehicle_info_util::VehicleInfo vehicle_info_{};
 };
 }  // namespace autoware::static_centerline_optimizer
-#endif  // AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
+#endif  // STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
