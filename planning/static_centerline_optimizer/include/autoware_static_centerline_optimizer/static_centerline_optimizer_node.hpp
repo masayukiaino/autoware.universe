@@ -57,7 +57,7 @@ private:
 
   // plan path
   std::vector<TrajectoryPoint> plan_path(const std::vector<lanelet::Id> & route_lane_ids);
-  static std::vector<TrajectoryPoint> optimize_trajectory(const Path & raw_path) ;
+  static std::vector<TrajectoryPoint> optimize_trajectory(const Path & raw_path);
   void on_plan_path(
     const PlanPath::Request::SharedPtr request, const PlanPath::Response::SharedPtr response);
 
@@ -106,5 +106,5 @@ private:
   // vehicle info
   vehicle_info_util::VehicleInfo vehicle_info_{};
 };
-} // namespace autoware::static_centerline_optimizer
+}  // namespace autoware::static_centerline_optimizer
 #endif  // AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_

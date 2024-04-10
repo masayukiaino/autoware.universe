@@ -41,6 +41,6 @@ using tier4_autoware_utils::LinearRing2d;
 using tier4_autoware_utils::LineString2d;
 using tier4_autoware_utils::Point2d;
 using visualization_msgs::msg::MarkerArray;
-} // namespace autoware::static_centerline_optimizer
+}  // namespace autoware::static_centerline_optimizer
 
 #endif  // AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__TYPE_ALIAS_HPP_

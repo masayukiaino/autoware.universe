@@ -531,7 +531,7 @@ std::vector<TrajectoryPoint> StaticCenterlineOptimizerNode::plan_path(
 }
 
 std::vector<TrajectoryPoint> StaticCenterlineOptimizerNode::optimize_trajectory(
-  const Path & raw_path) 
+  const Path & raw_path)
 {
   // convert to trajectory points
   const auto raw_traj_points = [&]() {
@@ -638,8 +638,8 @@ void StaticCenterlineOptimizerNode::on_plan_path(
     std::vector<geometry_msgs::msg::Point> current_lanelet_points;
 
     // check if target point is inside the lanelet
-    while (
-      lanelet::geometry::inside(lanelet, convert_to_lanelet_point(target_traj_point->pose.position))) {
+    while (lanelet::geometry::inside(
+      lanelet, convert_to_lanelet_point(target_traj_point->pose.position))) {
       // memorize points inside the lanelet
       current_lanelet_points.push_back(target_traj_point->pose.position);
       target_traj_point++;
@@ -758,4 +758,4 @@ void StaticCenterlineOptimizerNode::save_map(
   lanelet::write(lanelet2_output_file_path, *original_map_ptr_, *map_projector_);
   RCLCPP_INFO(get_logger(), "Saved map.");
 }
-}  // namespace autoware
+}  // namespace autoware::static_centerline_optimizer
