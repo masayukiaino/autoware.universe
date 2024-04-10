@@ -53,9 +53,7 @@
 #include <string>
 #include <vector>
 
-namespace autoware
-{
-namespace static_centerline_optimizer
+namespace autoware::static_centerline_optimizer
 {
 namespace
 {
@@ -132,7 +130,7 @@ rclcpp::QoS create_transient_local_qos()
   return rclcpp::QoS{1}.transient_local();
 }
 
-lanelet::BasicPoint2d convertToLaneletPoint(const geometry_msgs::msg::Point & geom_point)
+lanelet::BasicPoint2d convert_to_lanelet_point(const geometry_msgs::msg::Point & geom_point)
 {
   lanelet::BasicPoint2d point(geom_point.x, geom_point.y);
   return point;
@@ -177,9 +175,9 @@ geometry_msgs::msg::Pose get_text_pose(
   return tier4_autoware_utils::calcOffsetPose(pose, x_front, y_left, 0.0);
 }
 
-std::array<double, 3> convertHexStringToDecimal(const std::string & hex_str_color)
+std::array<double, 3> convert_hex_string_to_decimal(const std::string & hex_str_color)
 {
-  unsigned int hex_int_color;
+  unsigned int hex_int_color = 0;
   std::istringstream iss(hex_str_color);
   iss >> std::hex >> hex_int_color;
 
@@ -211,7 +209,7 @@ std::vector<lanelet::Id> check_lanelet_connection(
   return unconnected_lane_ids;
 }
 
-std_msgs::msg::Header createHeader(const rclcpp::Time & now)
+std_msgs::msg::Header create_header(const rclcpp::Time & now)
 {
   std_msgs::msg::Header header;
   header.frame_id = "map";
@@ -253,7 +251,7 @@ StaticCenterlineOptimizerNode::StaticCenterlineOptimizerNode(
         d->optimized_traj_points.begin() + traj_end_index_ + 1);
 
       pub_optimized_centerline_->publish(motion_utils::convertToTrajectory(
-        selected_optimized_traj_points, createHeader(this->now())));
+        selected_optimized_traj_points, create_header(this->now())));
     });
   sub_traj_end_index_ = create_subscription<std_msgs::msg::Int32>(
     "/centerline_updater_helper/traj_end_index", rclcpp::QoS{1},
@@ -269,7 +267,7 @@ StaticCenterlineOptimizerNode::StaticCenterlineOptimizerNode(
         d->optimized_traj_points.begin() + traj_end_index_ + 1);
 
       pub_optimized_centerline_->publish(motion_utils::convertToTrajectory(
-        selected_optimized_traj_points, createHeader(this->now())));
+        selected_optimized_traj_points, create_header(this->now())));
     });
   sub_save_map_ = create_subscription<std_msgs::msg::Bool>(
     "/centerline_updater_helper/save_map", rclcpp::QoS{1}, [this](const std_msgs::msg::Bool & msg) {
@@ -533,7 +531,7 @@ std::vector<TrajectoryPoint> StaticCenterlineOptimizerNode::plan_path(
 }
 
 std::vector<TrajectoryPoint> StaticCenterlineOptimizerNode::optimize_trajectory(
-  const Path & raw_path) const
+  const Path & raw_path) 
 {
   // convert to trajectory points
   const auto raw_traj_points = [&]() {
@@ -590,8 +588,8 @@ std::vector<TrajectoryPoint> StaticCenterlineOptimizerNode::optimize_trajectory(
         break;
       }
     }
-    for (size_t j = 0; j < optimized_traj_points.size(); ++j) {
-      whole_optimized_traj_points.push_back(optimized_traj_points.at(j));
+    for (const auto & optimized_traj_point : optimized_traj_points) {
+      whole_optimized_traj_points.push_back(optimized_traj_point);
     }
   }
 
@@ -641,7 +639,7 @@ void StaticCenterlineOptimizerNode::on_plan_path(
 
     // check if target point is inside the lanelet
     while (
-      lanelet::geometry::inside(lanelet, convertToLaneletPoint(target_traj_point->pose.position))) {
+      lanelet::geometry::inside(lanelet, convert_to_lanelet_point(target_traj_point->pose.position))) {
       // memorize points inside the lanelet
       current_lanelet_points.push_back(target_traj_point->pose.position);
       target_traj_point++;
@@ -685,7 +683,7 @@ void StaticCenterlineOptimizerNode::evaluate(
     for (size_t i = 0; i < dist_thresh_vec.size(); ++i) {
       const double dist_thresh = dist_thresh_vec.at(i);
       if (dist < dist_thresh) {
-        return convertHexStringToDecimal(marker_color_vec.at(i));
+        return convert_hex_string_to_decimal(marker_color_vec.at(i));
       }
     }
     return boost::none;
@@ -760,5 +758,4 @@ void StaticCenterlineOptimizerNode::save_map(
   lanelet::write(lanelet2_output_file_path, *original_map_ptr_, *map_projector_);
   RCLCPP_INFO(get_logger(), "Saved map.");
 }
-}  // namespace static_centerline_optimizer
 }  // namespace autoware

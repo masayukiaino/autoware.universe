@@ -31,9 +31,7 @@
 #include <string>
 #include <vector>
 
-namespace autoware
-{
-namespace static_centerline_optimizer
+namespace autoware::static_centerline_optimizer
 {
 using autoware_static_centerline_optimizer::srv::LoadMap;
 using autoware_static_centerline_optimizer::srv::PlanPath;
@@ -59,7 +57,7 @@ private:
 
   // plan path
   std::vector<TrajectoryPoint> plan_path(const std::vector<lanelet::Id> & route_lane_ids);
-  std::vector<TrajectoryPoint> optimize_trajectory(const Path & raw_path) const;
+  static std::vector<TrajectoryPoint> optimize_trajectory(const Path & raw_path) ;
   void on_plan_path(
     const PlanPath::Request::SharedPtr request, const PlanPath::Response::SharedPtr response);
 
@@ -106,8 +104,7 @@ private:
   rclcpp::CallbackGroup::SharedPtr callback_group_;
 
   // vehicle info
-  vehicle_info_util::VehicleInfo vehicle_info_;
+  vehicle_info_util::VehicleInfo vehicle_info_{};
 };
-}  // namespace static_centerline_optimizer
-}  // namespace autoware
+} // namespace autoware::static_centerline_optimizer
 #endif  // AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
