@@ -15,10 +15,11 @@
 #ifndef AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
 #define AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__STATIC_CENTERLINE_OPTIMIZER_NODE_HPP_
 
+#include "type_alias.hpp"
+
 #include "autoware_static_centerline_optimizer/srv/load_map.hpp"
 #include "autoware_static_centerline_optimizer/srv/plan_path.hpp"
 #include "autoware_static_centerline_optimizer/srv/plan_route.hpp"
-#include "autoware_static_centerline_optimizer/type_alias.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "vehicle_info_util/vehicle_info_util.hpp"
 

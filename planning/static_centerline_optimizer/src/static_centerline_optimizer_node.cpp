@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "autoware_static_centerline_optimizer/static_centerline_optimizer_node.hpp"
+#include "static_centerline_optimizer_node.hpp"
+#include "type_alias.hpp"
+#include "utils.hpp"
 
 #include "autoware_static_centerline_optimizer/msg/points_with_lane_id.hpp"
-#include "autoware_static_centerline_optimizer/type_alias.hpp"
-#include "autoware_static_centerline_optimizer/utils.hpp"
 #include "lanelet2_extension/utility/message_conversion.hpp"
 #include "lanelet2_extension/utility/query.hpp"
 #include "lanelet2_extension/utility/utilities.hpp"

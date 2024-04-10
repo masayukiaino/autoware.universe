@@ -15,7 +15,7 @@
 #ifndef AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__UTILS_HPP_
 #define AUTOWARE_STATIC_CENTERLINE_OPTIMIZER__UTILS_HPP_
 
-#include "autoware_static_centerline_optimizer/type_alias.hpp"
+#include "type_alias.hpp"
 #include "route_handler/route_handler.hpp"
 
 #include <rclcpp/time.hpp>
